@@ -12,8 +12,8 @@
 </head>
 <body>
   <div>
-    <h1>Swiss Elites — Persons</h1>
-    <input type="text" id="searchInput" value="Moritz">
+    <h1>HISB — Persons</h1>
+    <input type="text" id="searchInput" value="Georg">
     <div id="tableContainer">Loading data...</div>
     <div class="pagination" id="pagination"></div>
   </div>
@@ -26,7 +26,7 @@
     let allData = [];
     let currentPage = 1;
     let filteredData = [];
-    let currentSearchTerm = 'Moritz';
+    let currentSearchTerm = 'Georg';
 
     const searchInput = document.getElementById('searchInput');
     const tableContainer = document.getElementById('tableContainer');
@@ -93,10 +93,11 @@
 
 
       let tableHTML = `<br/>
-      <table><thead><tr><th>Forename</th><th>Birth Year</th><th>Profile</th></tr></thead><tbody>`;
+      <table><thead><tr><th>Forename</th><th>Birth Year</th></tr></thead><tbody>`;
       pageData.forEach(row => {
         tableHTML += `<tr><td><a href="./instance-page.html?uri=${escapeHtml(row.uri)}" target="_blank">${escapeHtml(row.name)}</a></td>
-          <td>${escapeHtml(row.birthYear)}</td><td><a href="${escapeHtml(convertEntityURI(row.uri) || '#')}" target="_blank">View</a></td></tr>`;
+          <td>${escapeHtml(row.birthYear)}</td>
+          </tr>`;
     });
       tableHTML += `</tbody></table>`;
       tableContainer.innerHTML = tableHTML;
